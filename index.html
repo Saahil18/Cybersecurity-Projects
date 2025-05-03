@@ -82,21 +82,22 @@
       <h3>Abstract</h3>
       <p>This project explores the vulnerabilities of monocular depth estimation (MDE) models to adversarial patch attacks in autonomous driving. We use the 3D2Fool algorithm to craft optimized 2D adversarial patches and test them on SOTA models like Monodepth2, DenseDepth, ZoeDepth, and DepthAnythingV2. We introduce adversarial training to defend these models and restore robustness in predictions.</p>
 
+      <h3>Sample Visualizations</h3>
+      <img src="images/a (1).png" alt="Unpatched and Patched Comparison" />
+      
       <h3>Methodology</h3>
       <p>The CARLA simulator is used to generate a synthetic dataset. YOLOv8 is applied for car detection, followed by optimized patch application and training using DenseDepth. A custom loss function maximizes disruption to depth maps in the patched region.</p>
-      <img src="images/methodology.png" alt="Methodology Diagram" />
+      <img src="images/Background Images (1) (1).png" alt="Methodology Diagram" />
 
-      <h3>Sample Visualizations</h3>
-      <img src="images/a1.png" alt="Unpatched and Patched Comparison" />
 
-      <h3>Attack Effect Across Models</h3>
+      <h3>Attack Effect Across Different MDE Models</h3>
       <img src="images/models_compare.png" alt="Model Comparison Under Attack" />
 
-      <h3>Adversarial Training on Our Patch</h3>
-      <img src="images/Patched_3.png" alt="Effect of Training on Our Patch" />
+      <h3>Results after Adversarial Training on Our Patch</h3>
+      <img src="images/Patched (3).png" alt="Effect of Training on Our Patch" />
 
-      <h3>Adversarial Training on Existing Patch</h3>
-      <img src="images/Patched_4.png" alt="Effect of Training on Existing Patch" />
+      <h3>Results after Adversarial Training on other Patch</h3>
+      <img src="images/Patched (4).png" alt="Effect of Training on Existing Patch" />
 
       <h3>Results Summary</h3>
       <ul>
@@ -117,7 +118,7 @@
 
       <h3>Methodology</h3>
       <p>Data preprocessing involved missing value treatment, encoding, and balanced train-test-validation splits with stratification. Models were tested on binary and decimal forms of the dataset. An ensemble model was created using max-voting across RF, LR, and AB.</p>
-      <img src="images/iov_methodology.png" alt="IoV IDS Methodology Diagram" />
+      
 
       <h3>Dataset Description</h3>
       <table>
