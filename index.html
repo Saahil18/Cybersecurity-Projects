@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saahil Khanna | Research Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+    .project {
+      background-color: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .project h2 {
+      margin-top: 0;
+    }
+    .project img {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    footer {
+      background-color: #282c34;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    h3 {
+      color: #20232a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Saahil Khanna</h1>
+    <p>Email: <a href="mailto:saahilkhanna182000@gmail.com" style="color:#61dafb;">saahilkhanna182000@gmail.com</a></p>
+  </header>
+
+  <div class="container">
+
+    <div class="project">
+      <h2>📘 Robust Monocular Depth Estimation Against Adversarial Camouflage</h2>
+
+      <h3>Abstract</h3>
+      <p>This project explores the vulnerabilities of monocular depth estimation (MDE) models to adversarial patch attacks in autonomous driving. We use the 3D2Fool algorithm to craft optimized 2D adversarial patches and test them on SOTA models like Monodepth2, DenseDepth, ZoeDepth, and DepthAnythingV2. We introduce adversarial training to defend these models and restore robustness in predictions.</p>
+
+      <h3>Methodology</h3>
+      <p>The CARLA simulator is used to generate a synthetic dataset. YOLOv8 is applied for car detection, followed by optimized patch application and training using DenseDepth. A custom loss function maximizes disruption to depth maps in the patched region.</p>
+      <img src="images/methodology.png" alt="Methodology Diagram" />
+
+      <h3>Sample Visualizations</h3>
+      <img src="images/a1.png" alt="Unpatched and Patched Comparison" />
+
+      <h3>Attack Effect Across Models</h3>
+      <img src="images/models_compare.png" alt="Model Comparison Under Attack" />
+
+      <h3>Adversarial Training on Our Patch</h3>
+      <img src="images/Patched_3.png" alt="Effect of Training on Our Patch" />
+
+      <h3>Adversarial Training on Existing Patch</h3>
+      <img src="images/Patched_4.png" alt="Effect of Training on Existing Patch" />
+
+      <h3>Results Summary</h3>
+      <ul>
+        <li>DenseDepth RMSE: 0.0805 → 0.0105</li>
+        <li>SSIM: 0.8446 → 0.9892</li>
+        <li>Ed: 0.0460 → 0.0073</li>
+        <li>Robust to multiple patch types</li>
+      </ul>
+
+      <p>📄 <a href="Saahil_Project_Depth_Estimation_Against_Adversarial_Camouflage_in_AV.pdf" download>Download Project PDF</a></p>
+    </div>
+
+    <div class="project">
+      <h2>🔐 IDS for Internet of Vehicles using ML, DL and Ensemble Methods</h2>
+
+      <h3>Abstract</h3>
+      <p>This project presents a comprehensive comparison of machine learning, deep learning, and ensemble learning algorithms for intrusion detection in the Internet of Vehicles (IoV). Using the CICIoV2024 dataset, we benchmark models such as Random Forest, Logistic Regression, AdaBoost, and LSTM on binary, 3-class, and multi-class classification tasks.</p>
+
+      <h3>Methodology</h3>
+      <p>Data preprocessing involved missing value treatment, encoding, and balanced train-test-validation splits with stratification. Models were tested on binary and decimal forms of the dataset. An ensemble model was created using max-voting across RF, LR, and AB.</p>
+      <img src="images/iov_methodology.png" alt="IoV IDS Methodology Diagram" />
+
+      <h3>Dataset Description</h3>
+      <table>
+        <tr><th>Label</th><th>Categories</th><th>Specific Class</th><th>Count</th></tr>
+        <tr><td>Benign</td><td></td><td></td><td>1,223,737</td></tr>
+        <tr><td rowspan="5">Attack</td><td>Dos</td><td></td><td>74,663</td></tr>
+        <tr><td rowspan="4">Spoofing</td><td>Rpm</td><td>54,900</td></tr>
+        <tr><td>Speed</td><td>24,951</td></tr>
+        <tr><td>Steering Wheel</td><td>19,977</td></tr>
+        <tr><td>Gas</td><td>9,991</td></tr>
+      </table>
+
+      <h3>Results (Binary Classification)</h3>
+      <img src="images/binary_results.png" alt="Binary Classification Results" />
+
+      <h3>Results (3-Class Classification)</h3>
+      <img src="images/three_class_results.png" alt="Three-Class Classification Results" />
+
+      <h3>Results (Multi-Class Classification)</h3>
+      <img src="images/multi_class_results.png" alt="Multi-Class Classification Results" />
+
+      <h3>Comparison with SOTA</h3>
+      <img src="images/sota_comparison.png" alt="SOTA Comparison Table" />
+
+      <p>📄 <a href="Case_Study_Report-IDS-Project.docx" download>Download Project DOCX</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Saahil Khanna | Built with ❤️ using GitHub Pages</p>
+  </footer>
+</body>
+</html>
