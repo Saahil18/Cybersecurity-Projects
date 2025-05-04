@@ -114,6 +114,9 @@
       <h3>Abstract</h3>
       <p>Monocular Depth Estimation (MDE) is increasingly used in autonomous vehicles due to its low cost and scalability. However, MDE models are vulnerable to adversarial attacks, which can degrade depth predictions and pose safety risks. In this project, we assess the vulnerability of top MDE models — Monodepth2, DenseDepth, DepthAnythingV2, and ZoeDepth — to optimized 2D adversarial patches based on the 3D2Fool algorithm. Our findings highlight significant variations in model robustness. To address this, we implement adversarial training, which improves resilience and reduces error, helping secure perception systems in AVs.</p>
 
+      <h3>Visualization</h3>
+      <img src="images/a (1).png" alt="Unpatched and Patched Comparison">
+      
       <h3>Methodology</h3>
       <p>The methodology includes four stages: creating a synthetic dataset using the CARLA simulator, optimizing adversarial patches using a custom loss function, evaluating several MDE models under attack, and applying adversarial training to improve robustness.</p>
       <ul>
@@ -123,9 +126,6 @@
         <li><strong>Adversarial Training:</strong> DenseDepth was fine-tuned using patched images to enhance resistance without degrading clean image performance.</li>
       </ul>
       <img src="images/Background Images (1) (1).png" alt="Methodology Diagram">
-
-      <h3>Sample Visualizations</h3>
-      <img src="images/a (1).png" alt="Unpatched and Patched Comparison">
 
       <h3>🧪 Experiments</h3>
       <h4>a) Testing Adversarial Patch Effectiveness Across MDE Models</h4>
@@ -163,7 +163,7 @@
       <img src="images/Patched (4).png" alt="Effect of Training on Existing Patch">
 
 
-      <p><a href="Saahil_Project_Depth_Estimation_Against_Adversarial_Camouflage_in_AV.pdf" download>📄 Download Project PDF</a></p>
+
     </div>
 
 <div class="project">
@@ -201,23 +201,23 @@
       <h4>Binary Classification</h4>
       <img src="images/binary_results.png" alt="Binary Classification Results">
       <p>RF, AB, LSTM, and the ensemble achieved near-perfect performance with test accuracy of 0.999 and F1-scores of 1.00. LR performed slightly lower but still competitively. Confusion matrices confirmed that most models exhibited minimal misclassifications.</p>
-      <img src="images/binary_confusion.png" alt="Binary Confusion Matrix">
+
 
       <h4>Three-Class Classification</h4>
       <img src="images/three_class_results.png" alt="Three-Class Classification Results">
       <p>RF, AB, and LSTM showed strong results again with 0.999 test accuracy and F1-scores of 1.00. LR lagged with lower recall and F1-score. Ensemble learning performed robustly across all metrics. The confusion matrix highlighted precise class separation for most models.</p>
-      <img src="images/three_class_confusion.png" alt="Three-Class Confusion Matrix">
+
 
       <h4>Multi-Class Classification</h4>
       <img src="images/multi_class_results.png" alt="Multi-Class Classification Results">
       <p>RF and LSTM performed best in the multi-class setup with 0.996 test accuracy. LR and AB yielded slightly weaker results. Ensemble learning once again demonstrated high precision (1.00) and F1-score (0.95), confirming its strength across complex classification tasks.</p>
-      <img src="images/multiclass_confusion.png" alt="Multiclass Confusion Matrix">
+
 
       <h4>Comparison with SOTA</h4>
       <img src="images/sota_comparison.png" alt="SOTA Comparison Table">
       <p>Our models outperformed several SOTA benchmarks. For the Decimal dataset, RF and LSTM matched or exceeded SOTA metrics, while ensemble models maintained the highest robustness. In the Binary dataset, LR and Ensemble approaches also surpassed SOTA models in both accuracy and F1-score. Use of cross-validation further ensured reliability and generalization of our findings.</p>
 
-      <p><a href="Case_Study_Report-IDS-Project.docx" download>📄 Download Project DOCX</a></p>
+
     </div>
 
   </div>
