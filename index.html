@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Projects</title>
   <title>Saahil Khanna | Research Projects</title>
   <style>
     :root {
@@ -51,7 +50,7 @@
     .project {
       background-color: var(--card-bg);
       padding: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
@@ -102,6 +101,7 @@
 </head>
 <body>
   <header>
+    <h1>Cybersecurity Projects</h1>
     <h1>Saahil Khanna</h1>
     <p>Email: <a href="mailto:saahilkhanna182000@gmail.com">saahilkhanna182000@gmail.com</a></p>
   </header>
@@ -110,43 +110,113 @@
 
     <div class="project">
       <h2>📘 Robust Monocular Depth Estimation Against Adversarial Camouflage</h2>
+
       <h3>Abstract</h3>
-      <p>This project explores the vulnerabilities of monocular depth estimation (MDE) models to adversarial patch attacks in autonomous driving...</p>
+      <p>Monocular Depth Estimation (MDE) is increasingly used in autonomous vehicles due to its low cost and scalability. However, MDE models are vulnerable to adversarial attacks, which can degrade depth predictions and pose safety risks. In this project, we assess the vulnerability of top MDE models — Monodepth2, DenseDepth, DepthAnythingV2, and ZoeDepth — to optimized 2D adversarial patches based on the 3D2Fool algorithm. Our findings highlight significant variations in model robustness. To address this, we implement adversarial training, which improves resilience and reduces error, helping secure perception systems in AVs.</p>
+
       <h3>Methodology</h3>
+      <p>The methodology includes four stages: creating a synthetic dataset using the CARLA simulator, optimizing adversarial patches using a custom loss function, evaluating several MDE models under attack, and applying adversarial training to improve robustness.</p>
+      <ul>
+        <li><strong>Dataset:</strong> 10,500 synthetic images of a 3D car model across varied scenes and camera angles, including weather variations.</li>
+        <li><strong>Patch Optimization:</strong> A custom loss function was designed to distort depth predictions. Gradient descent was used to maximize this distortion.</li>
+        <li><strong>Object Detection & Placement:</strong> YOLOv8 was used for robust vehicle detection and patch placement.</li>
+        <li><strong>Adversarial Training:</strong> DenseDepth was fine-tuned using patched images to enhance resistance without degrading clean image performance.</li>
+      </ul>
       <img src="images/Background Images (1) (1).png" alt="Methodology Diagram">
+
       <h3>Sample Visualizations</h3>
       <img src="images/a (1).png" alt="Unpatched and Patched Comparison">
-      <h3>Attack Effect Across Models</h3>
+
+      <h3>🧪 Experiments</h3>
+      <h4>a) Testing Adversarial Patch Effectiveness Across MDE Models</h4>
+      <p>We tested our optimized adversarial patch and another benchmark patch (SPOO) on seven state-of-the-art monocular depth estimation models: Monodepth2, DenseDepth, ZoeDepth, DPT, DepthAnythingV2, AdaBins, and MiDaS.<br>
+      📊 Metrics like Mean Depth Estimation Error (Ed), Ratio of Affected Region (Ra), and SSIM were used to evaluate the impact.</p>
+      <ul>
+        <li>ZoeDepth and AdaBins showed minimal numerical deviation, but also low sensitivity to attacks — revealing silent vulnerability.</li>
+        <li>Monodepth2 and MiDaS exhibited high Ra and Ed, indicating stronger (and more visible) attack impact.</li>
+      </ul>
+      <p>📸 <strong>Figure</strong><br>images/models_compare.png — Depth map disruptions caused by our patch and SPOO across all models.</p>
       <img src="images/models_compare.png" alt="Model Comparison Under Attack">
-      <h3>Adversarial Training on Our Patch</h3>
-      <img src="images/Patched (3).png" alt="Effect of Training on Our Patch">
-      <h3>Adversarial Training on Existing Patch</h3>
-      <img src="images/Patched (4).png" alt="Effect of Training on Existing Patch">
+
+      <h4>b) Adversarial Training with DenseDepth</h4>
+      <p>To enhance robustness, we adversarially trained DenseDepth using 9,450 patched images and corresponding ground truth depth maps. The goal was to restore accurate predictions despite adversarial interference.<br>
+      Training lasted 50 epochs with a learning rate of 0.0001 and batch size of 16.<br>
+      Metrics like Ed dropped from 0.0460 → 0.0073 and SSIM rose to 0.9892.<br>
+      Importantly, performance on clean images was not degraded.</p>
       <h3>Results Summary</h3>
       <ul>
         <li>DenseDepth RMSE: 0.0805 → 0.0105</li>
         <li>SSIM: 0.8446 → 0.9892</li>
         <li>Ed: 0.0460 → 0.0073</li>
       </ul>
+      <p>📸 <strong>Figure</strong><br>images/Patched (3).png — Before and after adversarial training on the same patched image.</p>
+      <img src="images/Patched (3).png" alt="Effect of Training on Our Patch">
+
+      <h4>c) Testing Robustness on a Different Adversarial Patch</h4>
+      <p>We tested the same adversarially trained DenseDepth model on a different patch (SPOO) to verify generalization. Results confirmed strong robustness:</p>
+      <ul>
+        <li>Ed improved from 0.0381 → 0.0157</li>
+        <li>Ra improved from 0.0639 → 0.0120</li>
+        <li>SSIM improved from 0.8896 → 0.9608</li>
+      </ul>
+      <p>📸 <strong>Figure</strong><br>images/Patched (4).png — Generalized defense against SPOO patch.</p>
+      <img src="images/Patched (4).png" alt="Effect of Training on Existing Patch">
+
+
       <p><a href="Saahil_Project_Depth_Estimation_Against_Adversarial_Camouflage_in_AV.pdf" download>📄 Download Project PDF</a></p>
     </div>
 
-    <div class="project">
-      <h2>🔐 IDS for Internet of Vehicles using ML, DL and Ensemble Methods</h2>
+<div class="project">
+      <h2>🔐 Intrusin Deetection System for Internet of Vehicles using ML, DL and Ensemble Methods</h2>
+
       <h3>Abstract</h3>
-      <p>This project presents a comprehensive comparison of machine learning, deep learning, and ensemble learning algorithms for intrusion detection...</p>
+      <p>Modern advancements have laid the foundation for transforming vehicles into autonomous entities with sensors, network capabilities, and embedded software — forming the Internet of Vehicles (IoV). IoV extends traditional VANET systems, enabling real-time interaction between vehicle components and their environments. However, this connectivity introduces significant cybersecurity vulnerabilities. Adversaries can exploit the system, causing data manipulation and critical safety threats. A robust Intrusion Detection System (IDS) is essential to mitigate these risks. This project compares traditional Machine Learning (ML), Deep Learning (DL), and Ensemble Learning (EL) models to determine the most effective techniques for IDS in AVs. We investigate three key questions: (1) Which traditional ML model performs best? (2) Can DL approaches outperform ML? (3) Is EL more effective than standalone models? We use the latest CICIoV2024 dataset to evaluate performance across Random Forest, Logistic Regression, AdaBoost, LSTM, and an ensemble model.</p>
+
       <h3>Methodology</h3>
+      <p>The methodology follows a structured pipeline using the CICIoV2024 dataset, involving data preprocessing, model training, evaluation, and comparison. Three research questions are addressed:</p>
+      <ul>
+        <li><strong>RQ1:</strong> Traditional ML models (LR, AdaBoost, RF) are trained and evaluated to determine the most accurate for detecting and classifying IoV attacks.</li>
+        <li><strong>RQ2:</strong> A Deep Learning model (LSTM) is trained and compared to ML models to assess performance improvements.</li>
+        <li><strong>RQ3:</strong> An ensemble model (max voting of LR, RF, and AdaBoost) is evaluated to see if combining models improves IDS performance.</li>
+      </ul>
       <img src="images/WPS Photos(1).png" alt="IoV IDS Methodology Diagram">
+
       <h3>Dataset Description</h3>
+      <p><strong>Decimal Format:</strong> Includes message IDs and data bytes (DATA_0 to DATA_7). Classes include Benign, DoS, and Spoofing attacks (Gas, RPM, Speed, Steering Wheel). Each instance is labeled by category and specific class.<br>
+      <strong>Binary Format:</strong> Binary representation of message IDs and data bits (ID0 to ID16 and DATA_00 to DATA_716). Allows bit-level analysis of traffic patterns.</p>
       <img src="images/dataset_description.png" alt="Dataset Table">
-      <h3>Results (Binary Classification)</h3>
+
+      <h3>Models Used</h3>
+      <ul>
+        <li><strong>Random Forest (RF):</strong> Builds multiple decision trees; ideal for high-dimensional data.</li>
+        <li><strong>Logistic Regression (LR):</strong> Effective binary classifier; interpretable and fast.</li>
+        <li><strong>AdaBoost:</strong> Boosts weak learners by focusing on misclassified instances for better accuracy.</li>
+        <li><strong>Long Short-Term Memory (LSTM):</strong> Recurrent neural network well-suited for sequential CAN bus traffic.</li>
+        <li><strong>Ensemble Learning:</strong> Uses max voting across LR, RF, and AdaBoost for improved robustness.</li>
+      </ul>
+      
+      <h3>🧪 Experiments</h3>
+      <p>The results presented below reflect the classification performance of ML, DL, and ensemble models using the CICIoV2024 dataset for binary, 3-class, and multi-class tasks. Metrics such as accuracy, recall, precision, and F1-score were analyzed, along with confusion matrices to provide detailed performance insight.</p>
+
+      <h4>Binary Classification</h4>
       <img src="images/binary_results.png" alt="Binary Classification Results">
-      <h3>Results (3-Class Classification)</h3>
+      <p>RF, AB, LSTM, and the ensemble achieved near-perfect performance with test accuracy of 0.999 and F1-scores of 1.00. LR performed slightly lower but still competitively. Confusion matrices confirmed that most models exhibited minimal misclassifications.</p>
+      <img src="images/binary_confusion.png" alt="Binary Confusion Matrix">
+
+      <h4>Three-Class Classification</h4>
       <img src="images/three_class_results.png" alt="Three-Class Classification Results">
-      <h3>Results (Multi-Class Classification)</h3>
+      <p>RF, AB, and LSTM showed strong results again with 0.999 test accuracy and F1-scores of 1.00. LR lagged with lower recall and F1-score. Ensemble learning performed robustly across all metrics. The confusion matrix highlighted precise class separation for most models.</p>
+      <img src="images/three_class_confusion.png" alt="Three-Class Confusion Matrix">
+
+      <h4>Multi-Class Classification</h4>
       <img src="images/multi_class_results.png" alt="Multi-Class Classification Results">
-      <h3>Comparison with SOTA</h3>
+      <p>RF and LSTM performed best in the multi-class setup with 0.996 test accuracy. LR and AB yielded slightly weaker results. Ensemble learning once again demonstrated high precision (1.00) and F1-score (0.95), confirming its strength across complex classification tasks.</p>
+      <img src="images/multiclass_confusion.png" alt="Multiclass Confusion Matrix">
+
+      <h4>Comparison with SOTA</h4>
       <img src="images/sota_comparison.png" alt="SOTA Comparison Table">
+      <p>Our models outperformed several SOTA benchmarks. For the Decimal dataset, RF and LSTM matched or exceeded SOTA metrics, while ensemble models maintained the highest robustness. In the Binary dataset, LR and Ensemble approaches also surpassed SOTA models in both accuracy and F1-score. Use of cross-validation further ensured reliability and generalization of our findings.</p>
+
       <p><a href="Case_Study_Report-IDS-Project.docx" download>📄 Download Project DOCX</a></p>
     </div>
 
