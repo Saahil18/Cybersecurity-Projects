@@ -1,155 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saahil Khanna | Research Projects</title>
   <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #00bcd4;
+      --card-bg: #1e1e1e;
+      --border-color: #2c2c2c;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
+
     header {
-      background-color: #282c34;
-      color: white;
-      padding: 20px;
+      background: #000;
       text-align: center;
+      padding: 2rem 1rem;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
+
+    header p {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
     .container {
       max-width: 960px;
-      margin: auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
+
     .project {
-      background-color: white;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
+
     .project h2 {
+      color: var(--accent-color);
       margin-top: 0;
     }
-    .project img {
-      max-width: 100%;
-      margin-top: 10px;
-      border-radius: 6px;
+
+    .project h3 {
+      margin-top: 1.5rem;
+      color: #90caf9;
     }
+
+    .project img {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 0.95em;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #ddd;
     }
+
     th, td {
-      border: 1px solid #ccc;
-      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      padding: 0.6rem;
       text-align: center;
     }
+
     th {
-      background-color: #f0f0f0;
+      background-color: #2c2c2c;
     }
+
     footer {
-      background-color: #282c34;
-      color: white;
       text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    h3 {
-      color: #20232a;
+      padding: 1rem;
+      background: #000;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Saahil Khanna</h1>
-    <p>Email: <a href="mailto:saahilkhanna182000@gmail.com" style="color:#61dafb;">saahilkhanna182000@gmail.com</a></p>
+    <p>Email: <a href="mailto:saahilkhanna182000@gmail.com">saahilkhanna182000@gmail.com</a></p>
   </header>
 
   <div class="container">
 
     <div class="project">
       <h2>📘 Robust Monocular Depth Estimation Against Adversarial Camouflage</h2>
-
       <h3>Abstract</h3>
-      <p>This project explores the vulnerabilities of monocular depth estimation (MDE) models to adversarial patch attacks in autonomous driving. We use the 3D2Fool algorithm to craft optimized 2D adversarial patches and test them on SOTA models like Monodepth2, DenseDepth, ZoeDepth, and DepthAnythingV2. We introduce adversarial training to defend these models and restore robustness in predictions.</p>
-
-      <h3>Sample Visualizations</h3>
-      <img src="images/a (1).png" alt="Unpatched and Patched Comparison" />
-      
+      <p>This project explores the vulnerabilities of monocular depth estimation (MDE) models to adversarial patch attacks in autonomous driving...</p>
       <h3>Methodology</h3>
-      <p>The CARLA simulator is used to generate a synthetic dataset. YOLOv8 is applied for car detection, followed by optimized patch application and training using DenseDepth. A custom loss function maximizes disruption to depth maps in the patched region.</p>
-      <img src="images/Background Images (1) (1).png" alt="Methodology Diagram" />
-
-
-      <h3>Attack Effect Across Different MDE Models</h3>
-      <img src="images/models_compare.png" alt="Model Comparison Under Attack" />
-
-      <h3>Results after Adversarial Training on Our Patch</h3>
-      <img src="images/Patched (3).png" alt="Effect of Training on Our Patch" />
-
-      <h3>Results after Adversarial Training on other Patch</h3>
-      <img src="images/Patched (4).png" alt="Effect of Training on Existing Patch" />
-
+      <img src="images/methodology.png" alt="Methodology Diagram">
+      <h3>Sample Visualizations</h3>
+      <img src="images/a1.png" alt="Unpatched and Patched Comparison">
+      <h3>Attack Effect Across Models</h3>
+      <img src="images/models_compare.png" alt="Model Comparison Under Attack">
+      <h3>Adversarial Training on Our Patch</h3>
+      <img src="images/Patched_3.png" alt="Effect of Training on Our Patch">
+      <h3>Adversarial Training on Existing Patch</h3>
+      <img src="images/Patched_4.png" alt="Effect of Training on Existing Patch">
       <h3>Results Summary</h3>
       <ul>
         <li>DenseDepth RMSE: 0.0805 → 0.0105</li>
         <li>SSIM: 0.8446 → 0.9892</li>
         <li>Ed: 0.0460 → 0.0073</li>
-        <li>Robust to multiple patch types</li>
       </ul>
-
-      <p>📄 <a href="Saahil_Project_Depth_Estimation_Against_Adversarial_Camouflage_in_AV.pdf" download>Download Project PDF</a></p>
+      <p><a href="Saahil_Project_Depth_Estimation_Against_Adversarial_Camouflage_in_AV.pdf" download>📄 Download Project PDF</a></p>
     </div>
 
     <div class="project">
       <h2>🔐 IDS for Internet of Vehicles using ML, DL and Ensemble Methods</h2>
-
       <h3>Abstract</h3>
-      <p>This project presents a comprehensive comparison of machine learning, deep learning, and ensemble learning algorithms for intrusion detection in the Internet of Vehicles (IoV). Using the CICIoV2024 dataset, we benchmark models such as Random Forest, Logistic Regression, AdaBoost, and LSTM on binary, 3-class, and multi-class classification tasks.</p>
-
+      <p>This project presents a comprehensive comparison of machine learning, deep learning, and ensemble learning algorithms for intrusion detection...</p>
       <h3>Methodology</h3>
-      <p>Data preprocessing involved missing value treatment, encoding, and balanced train-test-validation splits with stratification. Models were tested on binary and decimal forms of the dataset. An ensemble model was created using max-voting across RF, LR, and AB.</p>
-      
-
+      <img src="images/iov_methodology.png" alt="IoV IDS Methodology Diagram">
       <h3>Dataset Description</h3>
-      <table>
-        <tr><th>Label</th><th>Categories</th><th>Specific Class</th><th>Count</th></tr>
-        <tr><td>Benign</td><td></td><td></td><td>1,223,737</td></tr>
-        <tr><td rowspan="5">Attack</td><td>Dos</td><td></td><td>74,663</td></tr>
-        <tr><td rowspan="4">Spoofing</td><td>Rpm</td><td>54,900</td></tr>
-        <tr><td>Speed</td><td>24,951</td></tr>
-        <tr><td>Steering Wheel</td><td>19,977</td></tr>
-        <tr><td>Gas</td><td>9,991</td></tr>
-      </table>
-
+      <img src="images/dataset_description.png" alt="Dataset Table">
       <h3>Results (Binary Classification)</h3>
-      <img src="images/binary_results.png" alt="Binary Classification Results" />
-
+      <img src="images/binary_results.png" alt="Binary Classification Results">
       <h3>Results (3-Class Classification)</h3>
-      <img src="images/three_class_results.png" alt="Three-Class Classification Results" />
-
+      <img src="images/three_class_results.png" alt="Three-Class Classification Results">
       <h3>Results (Multi-Class Classification)</h3>
-      <img src="images/multi_class_results.png" alt="Multi-Class Classification Results" />
-
+      <img src="images/multi_class_results.png" alt="Multi-Class Classification Results">
       <h3>Comparison with SOTA</h3>
-      <img src="images/sota_comparison.png" alt="SOTA Comparison Table" />
-
-      <p>📄 <a href="Case_Study_Report-IDS-Project.docx" download>Download Project DOCX</a></p>
+      <img src="images/sota_comparison.png" alt="SOTA Comparison Table">
+      <p><a href="Case_Study_Report-IDS-Project.docx" download>📄 Download Project DOCX</a></p>
     </div>
 
   </div>
 
   <footer>
-    <p>© 2025 Saahil Khanna | Built with ❤️ using GitHub Pages</p>
+    <p>© 2025 Saahil Khanna — All rights reserved.</p>
   </footer>
 </body>
 </html>
